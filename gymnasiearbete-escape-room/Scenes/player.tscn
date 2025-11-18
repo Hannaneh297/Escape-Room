@@ -759,7 +759,7 @@ scale = Vector2(2, 2)
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_fnpki")
 animation = &"Walk_Down"
-frame_progress = 0.516377
+frame_progress = 0.0522584
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
