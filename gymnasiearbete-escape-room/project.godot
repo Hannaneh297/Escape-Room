@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gymnasiearbete Escape Room"
-run/main_scene="uid://dros3mchqv6nf"
+run/main_scene="uid://dki6ipi83kbux"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

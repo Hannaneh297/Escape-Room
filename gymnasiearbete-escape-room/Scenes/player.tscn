@@ -1,6 +1,7 @@
-[gd_scene load_steps=111 format=3 uid="uid://dros3mchqv6nf"]
+[gd_scene load_steps=112 format=3 uid="uid://dros3mchqv6nf"]
 
 [ext_resource type="Texture2D" uid="uid://deva7bf3guurm" path="res://Player/Idle/Idle_Down.png" id="1_pu2lt"]
+[ext_resource type="Script" uid="uid://dwpxusa6if25s" path="res://Scenes/player.gd" id="1_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://cc8h77njdnh4m" path="res://Player/Idle/Idle_Left_Down.png" id="2_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://wc6b2hbtmu1y" path="res://Player/Idle/Idle_Left_Up.png" id="3_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://bq402vvjw68ay" path="res://Player/Idle/Idle_Right_Down.png" id="4_h4iuc"]
@@ -754,12 +755,13 @@ height = 18.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_ukyrk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_fnpki")
-animation = &"Walk_Down"
-frame_progress = 0.0522584
+animation = &"Idle_Right_Up"
+frame_progress = 0.550357
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
