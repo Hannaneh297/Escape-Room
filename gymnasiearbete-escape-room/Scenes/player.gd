@@ -93,9 +93,7 @@ func _play_anim(input_vector: Vector2) -> void:
 		anim.play("Walk_Left_Down")
 	elif input_vector.x == -1 and input_vector.y == -1:
 		anim.play("Walk_Left_Up")
-	else:
-		pass
-		#stopp
 
 
-#make the camera be zoomed out at the beginning and the it zooms in to
+#make the camera be zoomed out at the beginning and the it zooms in to the zoom of choice after a while. 
+#so you can see the whole map at the beginning. 
