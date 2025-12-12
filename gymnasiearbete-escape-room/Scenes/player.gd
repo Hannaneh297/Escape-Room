@@ -96,4 +96,4 @@ func _play_anim(input_vector: Vector2) -> void:
 
 
 #make the camera be zoomed out at the beginning and the it zooms in to the zoom of choice after a while. 
-#so you can see the whole map at the beginning. 
+#so you can see the whole map at the beginning
