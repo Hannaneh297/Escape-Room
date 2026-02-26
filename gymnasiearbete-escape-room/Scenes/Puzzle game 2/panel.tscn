@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://1kyrvitcr3mu"]
+
+[ext_resource type="Script" uid="uid://1ibwmmbkfuy8" path="res://Scripts/Panelcontainer.gd" id="1_nynye"]
+[ext_resource type="Texture2D" uid="uid://1jdwvmomr858" path="res://Tileset/Inventory/inventory-slot.png" id="1_p1pwc"]
+
+[node name="Panel" type="PanelContainer"]
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_nynye")
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_p1pwc")

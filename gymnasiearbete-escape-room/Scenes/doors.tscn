@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8dbq2j0dhguo"]
+
+[ext_resource type="Script" uid="uid://dqaiwk8fblpsu" path="res://Scripts/doors.gd" id="1_3oa17"]
+[ext_resource type="Texture2D" uid="uid://dukfqk6u7i4so" path="res://Tileset/Door/Level1_enter_door.png" id="2_bd7c1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oa17"]
+size = Vector2(38, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmq8f"]
+size = Vector2(32, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd7c1"]
+size = Vector2(24, 36)
+
+[node name="Doors" type="Node2D"]
+script = ExtResource("1_3oa17")
+target_scene = "res://Scenes/puzzle_1.tscn"
+target_spawn = "res://Scenes/player.tscn"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -2)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 524288
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_3oa17")
+debug_color = Color(0.732603, 0.424419, 0.551637, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nmq8f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -5)
+texture = ExtResource("2_bd7c1")
+vframes = 2
+
+[node name="ExitTrigger" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_bd7c1")
+debug_color = Color(5.11389e-08, 0.116915, 0.143161, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="ExitTrigger" to="." method="_on_exit_trigger_body_entered"]
