@@ -5,6 +5,7 @@ extends Node2D
 
 var next_spawn : String
 
+#play the animation if player spwans
 func change_scene_to(path: String, spawn_name: String) -> void:
 	next_spawn = spawn_name
 	anim.play("fade_in")
@@ -27,4 +28,6 @@ func move_player_to_spawn():
 			
 
 	anim.play("fade_out")
+
+
 	

@@ -1,0 +1,147 @@
+[gd_scene load_steps=6 format=3 uid="uid://f2ggvkq2b0on"]
+
+[ext_resource type="Script" uid="uid://dnfkebx5ariyf" path="res://Scripts/slots.gd" id="1_cvkr4"]
+[ext_resource type="Texture2D" uid="uid://dkw1x00a0ve6g" path="res://Inventory/tilesets/sprite.png" id="2_q5hys"]
+[ext_resource type="Texture2D" uid="uid://btdr7v2lhjdlf" path="res://Inventory/tilesets/23.png" id="3_347u6"]
+[ext_resource type="FontFile" uid="uid://c5ereduonjifp" path="res://Font/antiquity-print.ttf" id="4_oss3g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08xoq"]
+
+[node name="Slots" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(40, 40)
+offset_right = 102.0
+offset_bottom = 103.0
+script = ExtResource("1_cvkr4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(51.5, 51.89)
+scale = Vector2(5.089, 5.1)
+texture = ExtResource("2_q5hys")
+vframes = 2
+
+[node name="Item_icon" type="Sprite2D" parent="."]
+position = Vector2(55, 50)
+scale = Vector2(2.5, 2.426)
+texture = ExtResource("3_347u6")
+
+[node name="Item_quantity" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 42.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_oss3g")
+theme_override_font_sizes/font_size = 20
+text = "1"
+
+[node name="Item_Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 62.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_08xoq")
+
+[node name="Details_panel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = -62.0
+offset_right = 77.0
+offset_bottom = -11.0
+color = Color(0, 0, 0, 0)
+
+[node name="ItemName" type="Label" parent="Details_panel"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 124.0
+offset_right = 82.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_oss3g")
+theme_override_font_sizes/font_size = 10
+text = "Name"
+
+[node name="ItemType" type="Label" parent="Details_panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = 3.5
+offset_right = 69.0
+offset_bottom = 33.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.823924, 0.823924, 0.823924, 1)
+theme_override_fonts/font = ExtResource("4_oss3g")
+theme_override_font_sizes/font_size = 10
+text = "Type"
+
+[node name="ItemEffect" type="Label" parent="Details_panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -23.0
+offset_right = 45.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.568973, 0.568973, 0.568973, 1)
+theme_override_fonts/font = ExtResource("4_oss3g")
+theme_override_font_sizes/font_size = 20
+text = "Effect"
+
+[node name="Usage_Panel" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 41.0
+offset_top = -13.0
+offset_right = 135.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 0)
+
+[node name="Use_Button" type="Button" parent="Usage_Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 30.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_oss3g")
+theme_override_font_sizes/font_size = 10
+text = "Use"
+
+[node name="Drop_Button" type="Button" parent="Usage_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 6.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_oss3g")
+theme_override_font_sizes/font_size = 10
+text = "Drop"
+
+[connection signal="mouse_entered" from="Item_Button" to="." method="_on_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="Item_Button" to="." method="_on_item_button_mouse_exited"]
+[connection signal="pressed" from="Item_Button" to="." method="_on_item_button_pressed"]
+[connection signal="pressed" from="Usage_Panel/Use_Button" to="." method="_on_place_button_pressed"]
+[connection signal="pressed" from="Usage_Panel/Drop_Button" to="." method="_on_drop_button_pressed"]

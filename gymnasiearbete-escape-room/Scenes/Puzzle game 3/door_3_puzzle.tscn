@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://l5a8rm0226dm"]
+
+[ext_resource type="Script" uid="uid://ddrppresouyr" path="res://Scripts/door_3_puzzle.gd" id="1_r6voy"]
+[ext_resource type="Texture2D" uid="uid://jfnykpm6sle" path="res://Tileset/Puzzle 2 tileset/Entering level 2.png" id="1_rg0vp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6voy"]
+size = Vector2(36, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsf4x"]
+size = Vector2(32.5, 44.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdxf4"]
+size = Vector2(32, 47.25)
+
+[node name="Door_3_puzzle" type="Node2D"]
+script = ExtResource("1_r6voy")
+target_scene = "res://Scenes/Puzzle game 3/labyrinth.tscn"
+target_spawn = "res://Scenes/player.tscn"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_r6voy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+modulate = Color(1, 0.254902, 1, 1)
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_lsf4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -8)
+texture = ExtResource("1_rg0vp")
+vframes = 2
+
+[node name="Exit_trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_trigger"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_jdxf4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Exit_trigger" to="." method="_on_exit_trigger_body_entered"]

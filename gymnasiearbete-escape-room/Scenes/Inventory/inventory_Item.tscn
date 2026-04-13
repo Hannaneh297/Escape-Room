@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnyemf8g54a85"]
+
+[ext_resource type="Script" uid="uid://n2t0nllnnovc" path="res://Scripts/inventory_item.gd" id="1_l2ldo"]
+[ext_resource type="FontFile" uid="uid://c5ereduonjifp" path="res://Font/antiquity-print.ttf" id="2_l2ldo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sf7u6"]
+
+[node name="Inventory_Item" type="Node2D" groups=["Items"]]
+script = ExtResource("1_l2ldo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_sf7u6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Item_label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 360.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_l2ldo")
+theme_override_font_sizes/font_size = 30
+text = "Press \"A\" to pickup"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

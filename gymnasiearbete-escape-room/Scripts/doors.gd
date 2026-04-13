@@ -36,27 +36,23 @@ func close():
 	$StaticBody2D/CollisionShape2D.set_deferred("disabled", false)
 
 
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:   
 	if body is Explorer:
 		print(body)
 		Explorer_near = true
 
 
-func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
+func _on_area_2d_body_exited(body: Explorer) -> void:
 	if body is Explorer:
 		Explorer_near = false
 		
-func _on_exit_trigger_body_entered(body: Node2D) -> void:
-	if body is Explorer and isopen and not transitioning:
+func _on_exit_trigger_body_entered(body: CharacterBody2D) -> void:   #transition between scenes, checks if its player to transition
+	if body is Explorer and isopen and not transitioning:            #if it hasnt transitioned
 		transitioning = true
 		await get_tree().create_timer(1).timeout
 		Levelmanager.change_scene_to(target_scene, target_spawn)
 
-		
-#func _ready():
-#	exit_trigger.body_entered.connect(_on_exit_trigger_body_entered) #not needed triggered the game 
-	
-	
+
 	
 func _input(event):   #om E är tryckt om dörren är öppen ska dörren stängas annars ska den öppnas.
 	if event.is_action_pressed("door_open") and Explorer_near:

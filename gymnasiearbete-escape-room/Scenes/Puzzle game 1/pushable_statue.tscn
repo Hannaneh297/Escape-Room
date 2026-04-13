@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs6qebh16gm67"]
+
+[ext_resource type="Script" uid="uid://d1jkv42pqf0pt" path="res://Scenes/Puzzle game 1/pushable_statue.gd" id="1_g2ar4"]
+[ext_resource type="Texture2D" uid="uid://dmotmrt6fvt0j" path="res://Tileset/Outside tileset/Props.png" id="2_7elqq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njc1v"]
+size = Vector2(30, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al706"]
+size = Vector2(38.5, 27)
+
+[node name="PushableStatue" type="RigidBody2D"]
+z_index = 2
+y_sort_enabled = true
+collision_layer = 16
+collision_mask = 5
+gravity_scale = 0.0
+lock_rotation = true
+freeze_mode = 1
+script = ExtResource("1_g2ar4")
+push_speed = 40.0
+
+[node name="Area2D" type="Area2D" parent="."]
+y_sort_enabled = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+y_sort_enabled = true
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_njc1v")
+debug_color = Color(0.942493, 0.0840476, 0.558983, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+y_sort_enabled = true
+texture = ExtResource("2_7elqq")
+region_enabled = true
+region_rect = Rect2(426, 0, 74, 103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, 29)
+shape = SubResource("RectangleShape2D_al706")
