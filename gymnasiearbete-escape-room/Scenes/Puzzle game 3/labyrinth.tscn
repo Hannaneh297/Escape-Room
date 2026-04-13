@@ -1041,7 +1041,7 @@ z_index = 1
 
 [node name="Button_lab" parent="Buttons" instance=ExtResource("7_or05p")]
 
-[node name="Button_lab_label" type="Label" parent="Buttons/Button_lab"]
+[node name="Label" type="Label" parent="Buttons/Button_lab"]
 visible = false
 top_level = true
 offset_left = 499.0
@@ -1054,7 +1054,7 @@ text = "Press \"P\" to activate"
 [node name="Button_lab2" parent="Buttons" instance=ExtResource("7_or05p")]
 position = Vector2(510, 276)
 
-[node name="Button_lab_label" type="Label" parent="Buttons/Button_lab2"]
+[node name="Label" type="Label" parent="Buttons/Button_lab2"]
 visible = false
 top_level = true
 offset_left = 945.0
@@ -1067,7 +1067,7 @@ text = "Press \"P\" to activate"
 [node name="Button_lab3" parent="Buttons" instance=ExtResource("7_or05p")]
 position = Vector2(1, 468)
 
-[node name="Button_lab_label" type="Label" parent="Buttons/Button_lab3"]
+[node name="Label" type="Label" parent="Buttons/Button_lab3"]
 visible = false
 top_level = true
 offset_left = 502.0

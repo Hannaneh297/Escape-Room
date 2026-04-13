@@ -63,7 +63,6 @@ func _on_drop_button_pressed() -> void: #if pressed instinalize drop position to
 		drop_offset = drop_offset.rotated(Global.player_node.rotation)
 		Global.drop_item(item, drop_position + drop_offset)
 		Global._remove_item(item["type"], item["effect"])
-		Global._remove_puzzle_box_item(item["type"], item["effect"])
 		usage_panel.visible = true
 		
 
@@ -71,12 +70,8 @@ func _on_drop_button_pressed() -> void: #if pressed instinalize drop position to
 
 func _on_use_button_pressed() -> void: 
 	usage_panel.visible = false
-
 	if item != null and item["effect"] != "": #not empty & item has an effect 
 		if Global.player_node:
-			var used = Global.player_node.apply_item_effect(item)  # returns true/false #goes to apply effect func
-			if used:
-				Global._remove_item(item["type"], item["effect"]) # if used then the item get removed
 			Global.player_node.apply_item_effect(item)
 			Global._remove_item(item["type"], item["effect"])
 		else:
