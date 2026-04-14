@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bup3ddqgfg43x"]
+[gd_scene load_steps=34 format=4 uid="uid://bup3ddqgfg43x"]
 
 [ext_resource type="Script" uid="uid://bf2lxgf1dnuut" path="res://Scripts/puzzle_1.gd" id="1_4kwit"]
 [ext_resource type="Texture2D" uid="uid://cdiuep0pj8kty" path="res://Tileset/Puzzle 1 tileset/Tiles.png" id="1_f4yhr"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cex65eg7toh4o" path="res://Scenes/Inventory/inventory.tscn" id="14_sk5fj"]
 [ext_resource type="PackedScene" uid="uid://cnyemf8g54a85" path="res://Scenes/Inventory/inventory_Item.tscn" id="16_muvx6"]
 [ext_resource type="Texture2D" uid="uid://b8odi20s46sro" path="res://Inventory/061.png" id="17_6ajyp"]
+[ext_resource type="Texture2D" uid="uid://djn5ajohe8biy" path="res://Inventory/resources_basic (kopia).png" id="18_6ajyp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_muvx6"]
 texture = ExtResource("1_f4yhr")
@@ -2414,11 +2415,9 @@ size = Vector2(20, 36)
 y_sort_enabled = true
 script = ExtResource("1_4kwit")
 
-[node name="Background_music" type="AudioStreamPlayer2D" parent="."]
-visible = false
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_08d54")
 autoplay = true
-max_distance = 5000.0
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -2527,6 +2526,13 @@ position = Vector2(647, 209)
 item_name = "Lantern "
 item_texture = ExtResource("17_6ajyp")
 item_effect = "place_puzzle"
+
+[node name="Potion2" parent="." instance=ExtResource("16_muvx6")]
+position = Vector2(91, 180)
+item_type = "Collecta"
+item_name = "Purple_potion"
+item_texture = ExtResource("18_6ajyp")
+item_effect = "stamina"
 
 [connection signal="body_entered" from="Exit_Door_1/Exit_trigger" to="Exit_Door_1" method="_on_exit_trigger_body_entered"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="." method="_on_inventory_gui_opened"]

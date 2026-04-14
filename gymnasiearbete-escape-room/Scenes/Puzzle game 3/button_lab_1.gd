@@ -15,7 +15,7 @@ var player_in_range = false
 
 @onready var sprite : Sprite2D = $Sprite
 
-@onready var label = $Label
+
 @onready var area_2d: Area2D = $Area2D
 @onready var Button_Manager = get_parent().get_parent().get_node("ButtonManager")
 
@@ -29,7 +29,7 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
 		Explorer_near = true
 		player_in_range = true
-		label.visible = true 
+		
 
 
 
@@ -37,7 +37,7 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
 		Explorer_near = false 
 		player_in_range = false
-		label.visible = false
+
 		
 
 
@@ -47,6 +47,5 @@ func _input(event: InputEvent) -> void:
 
 func activate_button() -> void:
 	is_activated = true
-	label.visible = false
 	activated.emit()
 	Button_Manager.button_activated()  # notify the manager

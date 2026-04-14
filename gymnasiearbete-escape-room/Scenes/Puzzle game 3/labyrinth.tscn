@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c0d0nosp38t71"]
+[gd_scene load_steps=24 format=4 uid="uid://c0d0nosp38t71"]
 
 [ext_resource type="Script" uid="uid://dqs3hjbalj770" path="res://Scripts/labyrinth.gd" id="1_uh30x"]
 [ext_resource type="AudioStream" uid="uid://d3excoiwtny1w" path="res://Audios/Forest JRPG.wav" id="2_dv4nv"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cnyemf8g54a85" path="res://Scenes/Inventory/inventory_Item.tscn" id="12_or05p"]
 [ext_resource type="Texture2D" uid="uid://cfj47vvch7hpb" path="res://Inventory/orb.png" id="13_bryjj"]
 [ext_resource type="Texture2D" uid="uid://b8odi20s46sro" path="res://Inventory/061.png" id="14_eoc6j"]
+[ext_resource type="Script" uid="uid://4sk6njrb8ljr" path="res://Scripts/Toggle_inventory.gd" id="15_eoc6j"]
+[ext_resource type="PackedScene" uid="uid://cex65eg7toh4o" path="res://Scenes/Inventory/inventory.tscn" id="16_di5e5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6uu3"]
 texture = ExtResource("2_ty8re")
@@ -1005,7 +1007,7 @@ show_behind_parent = true
 top_level = true
 y_sort_enabled = true
 script = ExtResource("4_jdqt4")
-target_scene = "res://Scenes/Outside.tscn"
+target_scene = "res://end_screen.tscn"
 target_spawn = "res://Scenes/player.tscn"
 
 [node name="Area2D" type="Area2D" parent="Exit_Door_2"]
@@ -1042,12 +1044,11 @@ z_index = 1
 [node name="Button_lab" parent="Buttons" instance=ExtResource("7_or05p")]
 
 [node name="Label" type="Label" parent="Buttons/Button_lab"]
-visible = false
 top_level = true
-offset_left = 499.0
-offset_top = 471.0
-offset_right = 707.0
-offset_bottom = 496.0
+offset_left = 472.0
+offset_top = 458.0
+offset_right = 680.0
+offset_bottom = 483.0
 theme_override_fonts/font = ExtResource("7_at01s")
 text = "Press \"P\" to activate"
 
@@ -1055,7 +1056,6 @@ text = "Press \"P\" to activate"
 position = Vector2(510, 276)
 
 [node name="Label" type="Label" parent="Buttons/Button_lab2"]
-visible = false
 top_level = true
 offset_left = 945.0
 offset_top = 266.0
@@ -1068,7 +1068,6 @@ text = "Press \"P\" to activate"
 position = Vector2(1, 468)
 
 [node name="Label" type="Label" parent="Buttons/Button_lab3"]
-visible = false
 top_level = true
 offset_left = 502.0
 offset_top = -5.0
@@ -1081,21 +1080,21 @@ text = "Press \"P\" to activate"
 position = Vector2(-68, -22)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(389, 657)
+position = Vector2(473, 656)
 
 [node name="Door" type="Sprite2D" parent="."]
 top_level = true
-position = Vector2(476, 690)
+position = Vector2(480, 691)
 texture = ExtResource("9_guw3f")
 vframes = 2
 
 [node name="Enemy" parent="." instance=ExtResource("10_e0o3f")]
 top_level = true
-position = Vector2(658, 456)
+position = Vector2(821, 527)
 
 [node name="Enemy2" parent="." instance=ExtResource("10_e0o3f")]
 top_level = true
-position = Vector2(254, 397)
+position = Vector2(362, 250)
 
 [node name="Orb" parent="." instance=ExtResource("12_or05p")]
 top_level = true
@@ -1117,6 +1116,15 @@ position = Vector2(94, 211)
 item_name = "Lantern "
 item_texture = ExtResource("14_eoc6j")
 item_effect = "place_puzzle"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("15_eoc6j")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("16_di5e5")]
+offset_left = 1871.0
+offset_top = 30.0
+offset_right = -155.92
+offset_bottom = -215.136
 
 [connection signal="body_entered" from="Exit_Door_2/Area2D" to="Exit_Door_2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Exit_Door_2/Area2D" to="Exit_Door_2" method="_on_area_2d_body_exited"]

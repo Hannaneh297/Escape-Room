@@ -23,7 +23,7 @@ var jump_height: float = 0.0
 @onready var right_ray: RayCast2D = $RightRay
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var footstep: AudioStreamPlayer2D = $Footstep
-
+@onready var info_box = $CanvasLayer/infobox
 
 
 var facing_dir = "down"
@@ -173,3 +173,8 @@ func apply_item_effect(item):   #applies th effects an item have
 		
 #make the camera be zoomed out at the beginning and the it zooms in to the zoom of choice after a while. 
 #so you can see the whole map at the beginning
+
+
+
+func _on_infomation_open_button_toggled(toggled_on: bool) -> void:
+	info_box.visible = toggled_on

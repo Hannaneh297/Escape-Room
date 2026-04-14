@@ -42,8 +42,6 @@ func _remove_item(item_type , item_effect): #removes item from inventory based o
 	
 
 
-
-
 func set_player_reference(player): #set player reference for inventory interactions
 	player_node = player
 	

@@ -9,7 +9,7 @@ var isopen: bool = false
 var Explorer_near: bool = false 
 var transitioning = false
 
-#@onready var plate: Pressure_plate = $Level_1_puzzle/Node2D/Pressure_Plate
+
 @onready var static_body = $StaticBody2D
 @onready var collision = $StaticBody2D/CollisionShape2D
 @onready var area = $Area2D

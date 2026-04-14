@@ -1,23 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxl2vnurgrba5"]
 
-[ext_resource type="Script" uid="uid://5jj31msdks4" path="res://control.gd" id="1_qtu10"]
-[ext_resource type="Texture2D" uid="uid://dljv0bwlbsd1d" path="res://Tileset/background/6.png" id="2_ee4bf"]
-[ext_resource type="FontFile" uid="uid://c5ereduonjifp" path="res://Font/antiquity-print.ttf" id="3_kbped"]
+[ext_resource type="Script" uid="uid://5jj31msdks4" path="res://control.gd" id="1_xu7hh"]
+[ext_resource type="Texture2D" uid="uid://dljv0bwlbsd1d" path="res://Tileset/background/6.png" id="2_pmjk2"]
+[ext_resource type="FontFile" uid="uid://c5ereduonjifp" path="res://Font/antiquity-print.ttf" id="3_d75mr"]
 
-[node name="Control" type="Control"]
+[node name="end_screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qtu10")
+script = ExtResource("1_xu7hh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.431373)
 position = Vector2(575, 323.5)
 scale = Vector2(0.497396, 0.499228)
-texture = ExtResource("2_ee4bf")
+texture = ExtResource("2_pmjk2")
 
 [node name="Label" type="Label" parent="Sprite2D"]
 anchors_preset = 5
@@ -28,7 +28,7 @@ offset_top = -373.577
 offset_right = -905.277
 offset_bottom = -299.577
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_kbped")
+theme_override_fonts/font = ExtResource("3_d75mr")
 theme_override_font_sizes/font_size = 80
 text = "Congratulations"
 
