@@ -6,7 +6,7 @@ var player_scene = preload("res://Scenes/player.tscn")
 
 @onready var spawn_point = $PlayerSpawnPoint
 @onready var ButtonManager: Node2D = $ButtonManager
-@onready var Background_music: AudioStreamPlayer2D = $Background_music
+@onready var Background_music = $Background_music
 
 
 

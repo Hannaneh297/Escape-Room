@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6cclqdf7qtti"]
+[gd_scene load_steps=3 format=3 uid="uid://c6cclqdf7qtti"]
 
+[ext_resource type="Texture2D" uid="uid://s742nihu01b7" path="res://Inventory/tilesets/sprite-2.png" id="1_p4jko"]
 [ext_resource type="FontFile" uid="uid://c5ereduonjifp" path="res://Font/antiquity-print.ttf" id="1_rf8vg"]
 
 [node name="Info_box" type="Control"]
@@ -8,17 +9,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Info_panel" type="Panel" parent="."]
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 398.0
-offset_bottom = 449.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(259, 242)
+scale = Vector2(11.7812, 7.21875)
+texture = ExtResource("1_p4jko")
 
-[node name="Label" type="Label" parent="Info_panel"]
-offset_left = 15.0
-offset_top = 14.0
-offset_right = 373.0
-offset_bottom = 434.0
+[node name="Label" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 42.0
+offset_right = 377.0
+offset_bottom = 462.0
 theme_override_fonts/font = ExtResource("1_rf8vg")
 theme_override_font_sizes/font_size = 30
 text = "Solve all 2 
@@ -28,5 +28,5 @@ laid out around
 the map and 
 in the levels. 
 Ps. to increase 
-speed find potions! 
+speed find potions.
 Good luck!"

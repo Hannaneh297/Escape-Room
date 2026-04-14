@@ -1047,20 +1047,20 @@ position_smoothing_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Infomation_open_button" type="Button" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 148.0
-offset_right = 56.0
-offset_bottom = 188.0
+offset_left = 17.0
+offset_top = 68.0
+offset_right = 109.0
+offset_bottom = 148.0
 toggle_mode = true
 icon = ExtResource("15_fd4e3")
 expand_icon = true
 
 [node name="infobox" parent="CanvasLayer" instance=ExtResource("16_qqcod")]
 visible = false
-offset_left = 1.0
-offset_top = 192.0
-offset_right = 403.0
-offset_bottom = 640.0
+offset_left = 16.0
+offset_top = 142.0
+offset_right = 418.0
+offset_bottom = 590.0
 script = ExtResource("17_qqcod")
 
 [connection signal="toggled" from="CanvasLayer/Infomation_open_button" to="." method="_on_infomation_open_button_toggled"]

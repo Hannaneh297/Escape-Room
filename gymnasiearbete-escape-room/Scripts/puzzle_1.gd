@@ -10,7 +10,7 @@ var player_scene = preload("res://Scenes/player.tscn")
 @onready var door = $Exit_Door_1
 @onready var spawn_point = $PlayerSpawnPoint
 @onready var plate = $Pressure_Plate
-@onready var Background_music: AudioStreamPlayer2D = $Background_music
+@onready var Background_music = $Background_music
 
 func _ready(): 
 	plate.activated.connect(_on_plate_activated)            #check if plate is activated, spwans player
