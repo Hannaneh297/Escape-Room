@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var Background_music = $Background_music
+@onready var Background_music = $Background_music 
 
 func play_background_music():
 	Background_music.play()

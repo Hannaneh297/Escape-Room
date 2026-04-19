@@ -14,7 +14,7 @@ func change_scene_to(path: String, spawn_name: String) -> void:
 	anim.play("fade_out")
 	
 	get_tree().change_scene_to_file(path)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0).timeout
 	
 	move_player_to_spawn()
 	
