@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://dki6ipi83kbux"]
+[gd_scene load_steps=60 format=4 uid="uid://dki6ipi83kbux"]
 
 [ext_resource type="Script" uid="uid://d13evyws2srqv" path="res://Scripts/level.gd" id="1_vsg1c"]
 [ext_resource type="AudioStream" uid="uid://d3excoiwtny1w" path="res://Audios/Forest JRPG.wav" id="2_m3frh"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://br46daqxifjb1" path="res://Tileset/Cloud Pack/Cloud 20.png" id="19_6mgrr"]
 [ext_resource type="Texture2D" uid="uid://btdr7v2lhjdlf" path="res://Inventory/tilesets/23.png" id="19_kyqwf"]
 [ext_resource type="Texture2D" uid="uid://t3n7bjns7o7" path="res://Inventory/resources_basic.png" id="23_kp38j"]
-[ext_resource type="Texture2D" uid="uid://wf0ev0wdrb5c" path="res://Tileset/Outside tileset/spritesheet-2.png" id="23_mjnce"]
 [ext_resource type="Texture2D" uid="uid://djn5ajohe8biy" path="res://Inventory/resources_basic (kopia).png" id="24_1ad6k"]
 [ext_resource type="Texture2D" uid="uid://db3ttj1n8fgn1" path="res://Inventory/16x16.png" id="26_dvx1r"]
 [ext_resource type="Texture2D" uid="uid://c4133gtpc41r3" path="res://Tileset/Cloud Pack/Cloud 8.png" id="27_sq13n"]
@@ -4353,10 +4352,6 @@ item_type = "l"
 item_name = "Book"
 item_texture = ExtResource("33_3qbps")
 item_effect = "place_puzzle"
-
-[node name="Plane" type="Sprite2D" parent="."]
-position = Vector2(703, 219)
-texture = ExtResource("23_mjnce")
 
 [node name="Clouds" type="Node" parent="."]
 

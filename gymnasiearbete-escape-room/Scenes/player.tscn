@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bxb05pm4ovot6" path="res://Player/Walk/walk_Up.png" id="12_bi64h"]
 [ext_resource type="Texture2D" uid="uid://bs1d1qf1klh4n" path="res://Document.png" id="15_fd4e3"]
 [ext_resource type="Script" uid="uid://bdve7pmju4wlg" path="res://Scripts/push_area.gd" id="15_qqcod"]
-[ext_resource type="PackedScene" uid="uid://c6cclqdf7qtti" path="res://infobox.tscn" id="16_qqcod"]
+[ext_resource type="PackedScene" uid="uid://c6cclqdf7qtti" path="res://Scenes/infobox.tscn" id="16_qqcod"]
 [ext_resource type="Script" uid="uid://c643oyq45wler" path="res://infobox.gd" id="17_qqcod"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
